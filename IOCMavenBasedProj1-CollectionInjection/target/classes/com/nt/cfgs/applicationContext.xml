@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans
+		 https://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://www.springframework.org/schema/beans">
+	
+	<bean id="sysDate" class="java.util.Date"/>
+	
+	<bean id="dobDate" class="java.util.Date">
+		<property name="year"><value>1996</value></property>
+		<property name="month"><value>07</value></property>
+		<property name="date"><value>17</value></property>
+	</bean>
+	
+	<bean id="st" class="com.nt.beans.StudentDetails">
+		<property name="marks">
+			<array>
+				<value>95</value>
+				<value>85</value>
+				<value>75</value>
+			</array>
+		</property>
+		<property name="impDate">
+			<array>
+				<ref bean="sysDate"/>
+				<ref bean="dobDate"/>
+				<ref bean="sysDate"/>
+			</array>
+		</property>
+	</bean>
+	<bean id="clg" class="com.nt.beans.CollegeDetails">
+		<property name="snames">
+			<list>
+				<value>rizwi</value>
+				<value>raj</value>
+				<value>shabab</value>
+				<value>mahi</value>
+			</list>
+		</property>
+		<property name="impDates">
+			<array>
+				<ref bean="sysDate"/>
+				<ref bean="dobDate"/>
+			</array>
+		</property>
+	</bean>	 
+</beans>
